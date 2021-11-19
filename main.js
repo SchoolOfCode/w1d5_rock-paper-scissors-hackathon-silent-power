@@ -83,7 +83,8 @@ let playerInput = prompt(`Enter your move. ${username}`);
 //        randomNumber = 0;
 //        }
 //Computer wins 50%
-if (Math.random()*4 === 0){
+if (Math.floor(Math.random()*4) === 0){
+    console.log("I am CHEATING!");
     if (playerInput === "rock"){
         randomNumber = 1;
     } else if (playerInput === "paper"){
