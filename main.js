@@ -63,17 +63,24 @@ else if (playerMove  ===  "scissors"){
 }
 let confirm = "yes";
 let counts = 0;
+let username = prompt("Please enter your username.");
+while ( /^[A-Z]/.test(username) === false )
+ {username = 
+    prompt('Username must start with captital letter.')};
+
+while (username.length > 10) {username = 
+    prompt('Username must be less than ten characters.')};
+
 while (confirm === "yes") {
 let computerInput = ["rock","paper","scissors"];
 let randomNumber = Math.floor((Math.random() * 3));
 
-let playerInput = prompt("Enter your move.");
+let playerInput = prompt(`Enter your move. ${username}`);
 let result = getWinner(playerInput, computerInput[randomNumber]);
 counts ++;
 alert(`Result: ${result}, Counts: ${counts}, Wins: ${wins},
- Losses${losses}, Draws: ${draws}`);
-confirm = prompt ("Would you like to play again? ");
+ Losses${losses}, Draws: ${draws}, ${username} `);
+confirm = prompt (`Would you like to play again? ${username}`);
 }
-// track how many games played
-// track numbers of wins, losses, draws 
-// display after each round
+// 
+
